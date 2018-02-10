@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>calculator</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lobster" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script>
+        function display(n1) {
+            cal.inpt.value = cal.inpt.value + n1;
+            if (n1 === 'AC') {
+                cal.inpt.value = '';
+            }
+        }
+
+        function answer() {
+            var x = cal.inpt.value;
+            x = eval(x);
+            cal.inpt.value = x;
+        }
+
+        function dec() {
+
+            cal.inpt.value = cal.input.value.slice(0, cal.input.value.length - 1);
+
+        }
+    </script>
+    <style>
+        .well1 {
+            height: 350px;
+            background-color: black;
+            opacity: .6;
+            width: 305px;
+        }
+        
+        .well2 {
+            height: 265px;
+            width: 275px;
+            margin-left: 10px;
+            margin-top: 10px;
+            border: none;
+        }
+        
+        .equal {
+            margin-left: 15px;
+        }
+        
+        .btnmar {
+            margin-left: 10px;
+        }
+        
+        .btnma {
+            margin-left: 6px;
+        }
+        
+        p {
+            font-family: Lobster;
+            color: black;
+            font-weight: bold;
+            font-size: 25px;
+            font
+        }
+        
+        .inpt {
+            font-size: 30px;
+            opacity: .5;
+            height: 55px;
+            width: 270px;
+            margin-top: -10px;
+            margin-left: 0px;
+        }
+        
+        .input1 {
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <form name="cal">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="well well1">
+                        <input class="inpt input1" type="text" size="30px" name="inpt" />
+                        <div class="row">
+                            <div class="col-xs-15 ">
+                                <div class="well well2">
+                                    <input style="margin-left:0px;" type="button" name="mul" onclick="display(mul.value)" class="btn btn-primary col-xs-4 btnsp  active" value="*" />
+                                    <div> <input style="margin-left:20px;" name="clra" onclick="display(clra.value)" type="button" class="btn btn-primary col-xs-2 active btnsp" value="AC" /> </div>
+                                    <input style="margin-left:15px;" name="clr1" onclick="dec()" type="button" class="btn btn-primary col-xs-4 active " value="DEL" />
+
+                                    <div><input style="margin-top:10px;" name="one" onclick="display(one.value)" type="button" class="btn btn-primary btnmar active" value="1" />
+                                        <input style="margin-top:10px;" name="two" onclick="display(two.value)" type="button" class="btn btn-primary active" value="2" />
+                                        <input style="margin-top:10px;" name="three" onclick="display(three.value)" type="button" class="btn btn-primary active" value="3" />
+                                        <input style="margin-top:10px;" name="four" onclick="display(four.value)" type="button" class="btn btn-primary active" value="4" />
+                                        <input style="margin-top:10px;" name="div" onclick="display(div.value) " type="button" class="btn btn-primary col-xs-4 active" value="/" />
+                                        <br/>
+                                        <input style="margin-top:10px; " name="five" onclick="display(five.value) " type="button" class="btn btn-primary active btnmar " value="5" />
+                                        <input style="margin-top:10px; " name="six" onclick="display(six.value) " type="button" class="btn btn-primary active " value="6" />
+                                        <input style="margin-top:10px; " name="seven" onclick="display(seven.value) " type="button" class="btn btn-primary active " value="7" />
+
+                                        <input style="margin-top:10px; " name="eight" onclick="display(eight.value)" type="button" class="btn btn-primary active " value="8" />
+                                        <input style="margin-top:10px; " name="plus" onclick="display(plus.value)" type="button" class="btn btn-primary col-xs-4 active " value="+ " /> <br/>
+                                        <input style="margin-top:10px;" name="nine" onclick="display(nine.value)" type="button" class="btn btn-primary btnma active" value="9" />
+                                        <input style="margin-top:10px;" name="zero" onclick="display(zero.value)" type="button" class="btn btn-primary active" value="0" />
+                                        <input style="margin-top:10px;" name="zer0" onclick="display(zer0.value)" type="button" class="btn btn-primary active" value="00" />
+                                        <input style="margin-top:10px;" name="point" onclick="display(point.value)" type="button" class="btn btn-primary active" value="." />
+                                        <input style="margin-top:10px;" name="sub" onclick="display(sub.value)" type="button" class="btn btn-primary col-xs-4 active " value="-" /> <br/>
+                                        <input style="margin-top:10px;" name="mod" onclick="display(mod.value)" type="button" class="btn btn-primary col-xs-4 active" value="%" />
+                                        <input style="margin-top:10px;margin-left:10px;" name="equal" onclick="answer()" type="button" class="btn btn-primary col-xs-7 active " value="=" />
+                                        <p>MFCAL</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+
+</html>
